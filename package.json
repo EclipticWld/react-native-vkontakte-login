@@ -8,7 +8,7 @@
     "build": "rm -rf ./lib/ && mkdir lib && tsc",
     "build-scripts": "tsc -p ./scripts/tsconfig.json",
     "prepublishOnly": "npm run build && npm run build-scripts",
-    "postinstall": "node ./scripts/postinstall.js",
+    "postinstall": "npm run prepublishOnly && node ./scripts/postinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -51,6 +51,7 @@
     "glob": "^7.1.2",
     "inquirer": "^3.2.0",
     "plist": "^2.1.0",
+    "typescript": "^2.4.2",
     "which": "^1.2.14",
     "xcode": "^0.9.3"
   },
